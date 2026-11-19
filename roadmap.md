@@ -1,0 +1,3 @@
+- [ ] Build NOVOMED patient-facing pages and navigation using confirmed brief details.
+- [ ] Add appointment request capture with branch selection; email notification delivery depends on verified sender setup.
+- [ ] Verify mobile and desktop presentation, page metadata, and project checks; commit the completed changes.
