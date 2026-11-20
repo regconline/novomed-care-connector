@@ -8,6 +8,13 @@
       "when": 1795098111572,
       "tag": "0000_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795149230839,
+      "tag": "0001_doctor_photo_admin_access",
+      "breakpoints": true
     }
   ]
 }
