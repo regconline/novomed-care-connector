@@ -1,4 +1,5 @@
-- [ ] Build NOVOMED patient-facing pages and navigation using confirmed brief details.
-- [ ] Add appointment request capture with branch selection; email notification delivery depends on verified sender setup.
-- [ ] Add doctor portrait placeholders and profile pages; keep photo replacement locked until an administrator is assigned.
-- [ ] Verify mobile and desktop presentation, page metadata, and project checks; commit the completed changes.
+- [ ] Redesign the NOVOMED homepage and mobile navigation in the existing visual system.
+- [ ] Complete doctor profiles, portrait placeholders, service pages, practice pages, patient information, health library, contact, and legal pages using verified details.
+- [ ] Complete appointment requests with secure storage, booking references, and a role-gated staff dashboard; keep email notifications off until explicitly requested.
+- [ ] Add route metadata, sitemap/robots, and a valid Vercel configuration without disrupting TanStack routing.
+- [ ] Verify forms, routes, mobile/desktop layouts, tests, and current preview diagnostics; commit the changes.
