@@ -29,7 +29,7 @@ function AppointmentPage() {
       <header className="border-b hairline bg-white">
         <div className="container-page flex h-20 items-center justify-between">
           <Link to="/" aria-label="NOVOMED General Practitioners — home">
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-14 w-auto" />
           </Link>
           <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-brand">
             Exit to website

@@ -29,7 +29,7 @@ function ReceivedPage() {
     <div className="min-h-screen bg-[linear-gradient(180deg,#d9f0e9_0%,#ffffff_55%)]">
       <header className="container-page flex h-20 items-center">
         <Link to="/" aria-label="NOVOMED General Practitioners — home">
-          <Logo className="h-12 w-auto" />
+          <Logo className="h-14 w-auto" />
         </Link>
       </header>
       <main id="main" className="container-narrow py-12 md:py-20">

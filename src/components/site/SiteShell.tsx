@@ -63,7 +63,7 @@ function MobileMenu() {
             Pages, appointment requests and practice contact details.
           </Dialog.Description>
           <div className="flex h-20 items-center justify-between border-b hairline px-6">
-            <Logo className="h-11 w-auto" />
+            <Logo className="h-12 w-auto" />
             <Dialog.Close asChild>
               <button
                 type="button"
@@ -135,7 +135,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b hairline bg-white/90 backdrop-blur-md supports-[backdrop-filter]:bg-white/80">
         <div className="container-page flex h-20 items-center justify-between gap-6">
           <Link to="/" className="shrink-0" aria-label="NOVOMED General Practitioners — home">
-            <Logo className="h-12 w-auto md:h-[3.25rem]" />
+            <Logo className="h-14 w-auto md:h-[3.75rem]" />
           </Link>
           <nav className="hidden items-center gap-1 xl:flex" aria-label="Main navigation">
             {nav.slice(1).map((item) => (
@@ -170,7 +170,7 @@ function SiteFooter() {
       <div className="container-page grid gap-12 py-16 md:py-20 lg:grid-cols-[1.2fr_0.8fr_1fr_1fr]">
         <div>
           <div className="inline-flex rounded-xl bg-white px-4 py-3">
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-16 w-auto" />
           </div>
           <p className="mt-6 max-w-xs text-sm leading-7 text-white/70">
             General medical practice serving patients in Elsies River and Hout Bay, Cape Town.
