@@ -1,14 +1,22 @@
-import { CircleUserRound, ImageUp } from "lucide-react";
+import { ImageUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
 type DoctorPortraitProps = {
-  doctor: { slug: string; name: string };
+  doctor: { slug: string; name: string; shortName?: string };
   className?: string;
+  label?: boolean;
 };
 
-export function DoctorPortrait({ doctor, className = "" }: DoctorPortraitProps) {
+const initials = (name: string) =>
+  name
+    .replace(/^Dr\s+/, "")
+    .split(/[\s.]+/)
+    .filter(Boolean)
+    .slice(-1)[0]?.[0] ?? "";
+
+export function DoctorPortrait({ doctor, className = "", label = true }: DoctorPortraitProps) {
   const fileInput = useRef<HTMLInputElement>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [canManage, setCanManage] = useState(false);
@@ -34,7 +42,9 @@ export function DoctorPortrait({ doctor, className = "" }: DoctorPortraitProps) 
       if (active && role) setCanManage(true);
     };
     void loadPortrait();
-    return () => { active = false; };
+    return () => {
+      active = false;
+    };
   }, [doctor.slug]);
 
   const uploadPortrait = async (file: File | undefined) => {
@@ -67,17 +77,44 @@ export function DoctorPortrait({ doctor, className = "" }: DoctorPortraitProps) 
 
   return (
     <div className={`w-full ${className}`}>
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-clinical">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.25rem] bg-clinical">
         {imageUrl ? (
-          <img src={imageUrl} alt={`${doctor.name} — Doctor's Photograph`} className="absolute inset-0 size-full object-cover" />
+          <img
+            src={imageUrl}
+            alt={`Portrait of ${doctor.name}`}
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 size-full object-cover"
+          />
         ) : (
-          <div className="absolute inset-0 grid place-items-center bg-mint/40">
-            <CircleUserRound aria-hidden="true" className="size-24 text-primary/60" strokeWidth={1.2} />
+          <div
+            className="absolute inset-0 bg-[linear-gradient(160deg,#eaf3f8_0%,#d9f0e9_100%)]"
+            role="img"
+            aria-label={`Portrait placeholder for ${doctor.name}. Photograph to follow.`}
+          >
+            <div aria-hidden="true" className="grain absolute inset-0 opacity-50" />
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 200 250"
+              className="absolute inset-x-0 bottom-0 h-[78%] w-full text-brand/[0.09]"
+              fill="currentColor"
+            >
+              <circle cx="100" cy="92" r="44" />
+              <path d="M18 250c4-58 40-96 82-96s78 38 82 96z" />
+            </svg>
+            <span
+              aria-hidden="true"
+              className="absolute left-5 top-4 font-display text-6xl font-extrabold tracking-tighter text-brand/15"
+            >
+              {initials(doctor.name)}
+            </span>
           </div>
         )}
-        <span className="absolute bottom-3 left-3 bg-background/90 px-3 py-1.5 text-xs font-medium text-foreground shadow-soft">
-          Doctor's Photograph
-        </span>
+        {label && !imageUrl && (
+          <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-brand shadow-soft">
+            Photograph to follow
+          </span>
+        )}
       </div>
       {canManage && (
         <div className="mt-3">
@@ -92,10 +129,21 @@ export function DoctorPortrait({ doctor, className = "" }: DoctorPortraitProps) 
               event.currentTarget.value = "";
             }}
           />
-          <Button type="button" variant="outline" size="sm" disabled={uploading} onClick={() => fileInput.current?.click()}>
-            <ImageUp />{uploading ? "Uploading…" : "Upload photograph"}
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            disabled={uploading}
+            onClick={() => fileInput.current?.click()}
+          >
+            <ImageUp />
+            {uploading ? "Uploading…" : "Upload photograph"}
           </Button>
-          {message && <p className="mt-2 text-sm text-muted-foreground" role="status">{message}</p>}
+          {message && (
+            <p className="mt-2 text-sm text-muted-foreground" role="status">
+              {message}
+            </p>
+          )}
         </div>
       )}
     </div>

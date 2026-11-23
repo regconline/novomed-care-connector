@@ -11,8 +11,32 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as PracticesRouteImport } from './routes/practices'
-import { Route as ServicesRouteImport } from './routes/services'
+import { Route as BookAppointmentRouteImport } from './routes/book-appointment'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
+import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
+import { Route as PatientInformationRouteImport } from './routes/patient-information'
+import { Route as PopiaRouteImport } from './routes/popia'
+import { Route as PopiaNoticeRouteImport } from './routes/popia-notice'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StaffRouteImport } from './routes/staff'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
+import { Route as AppointmentIndexRouteImport } from './routes/appointment/index'
+import { Route as AppointmentReceivedRouteImport } from './routes/appointment/received'
+import { Route as DoctorsIndexRouteImport } from './routes/doctors/index'
+import { Route as DoctorsSlugRouteImport } from './routes/doctors/$slug'
+import { Route as HealthLibraryIndexRouteImport } from './routes/health-library/index'
+import { Route as HealthLibrarySlugRouteImport } from './routes/health-library/$slug'
+import { Route as LocationsIndexRouteImport } from './routes/locations/index'
+import { Route as LocationsSlugRouteImport } from './routes/locations/$slug'
+import { Route as PracticesIndexRouteImport } from './routes/practices/index'
+import { Route as PracticesSlugRouteImport } from './routes/practices/$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -24,49 +48,350 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PracticesRoute = PracticesRouteImport.update({
-  id: '/practices',
-  path: '/practices',
+const BookAppointmentRoute = BookAppointmentRouteImport.update({
+  id: '/book-appointment',
+  path: '/book-appointment',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiePolicyRoute = CookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedicalDisclaimerRoute = MedicalDisclaimerRouteImport.update({
+  id: '/medical-disclaimer',
+  path: '/medical-disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientInformationRoute = PatientInformationRouteImport.update({
+  id: '/patient-information',
+  path: '/patient-information',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PopiaRoute = PopiaRouteImport.update({
+  id: '/popia',
+  path: '/popia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PopiaNoticeRoute = PopiaNoticeRouteImport.update({
+  id: '/popia-notice',
+  path: '/popia-notice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentIndexRoute = AppointmentIndexRouteImport.update({
+  id: '/appointment/',
+  path: '/appointment/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentReceivedRoute = AppointmentReceivedRouteImport.update({
+  id: '/appointment/received',
+  path: '/appointment/received',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsIndexRoute = DoctorsIndexRouteImport.update({
+  id: '/doctors/',
+  path: '/doctors/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsSlugRoute = DoctorsSlugRouteImport.update({
+  id: '/doctors/$slug',
+  path: '/doctors/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthLibraryIndexRoute = HealthLibraryIndexRouteImport.update({
+  id: '/health-library/',
+  path: '/health-library/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HealthLibrarySlugRoute = HealthLibrarySlugRouteImport.update({
+  id: '/health-library/$slug',
+  path: '/health-library/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsIndexRoute = LocationsIndexRouteImport.update({
+  id: '/locations/',
+  path: '/locations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsSlugRoute = LocationsSlugRouteImport.update({
+  id: '/locations/$slug',
+  path: '/locations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticesIndexRoute = PracticesIndexRouteImport.update({
+  id: '/practices/',
+  path: '/practices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PracticesSlugRoute = PracticesSlugRouteImport.update({
+  id: '/practices/$slug',
+  path: '/practices/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/practices': typeof PracticesRoute
-  '/services': typeof ServicesRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/patient-information': typeof PatientInformationRoute
+  '/popia': typeof PopiaRoute
+  '/popia-notice': typeof PopiaNoticeRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/staff': typeof StaffRoute
+  '/terms': typeof TermsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/appointment/received': typeof AppointmentReceivedRoute
+  '/doctors/$slug': typeof DoctorsSlugRoute
+  '/health-library/$slug': typeof HealthLibrarySlugRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/practices/$slug': typeof PracticesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/appointment/': typeof AppointmentIndexRoute
+  '/doctors/': typeof DoctorsIndexRoute
+  '/health-library/': typeof HealthLibraryIndexRoute
+  '/locations/': typeof LocationsIndexRoute
+  '/practices/': typeof PracticesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/practices': typeof PracticesRoute
-  '/services': typeof ServicesRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/patient-information': typeof PatientInformationRoute
+  '/popia': typeof PopiaRoute
+  '/popia-notice': typeof PopiaNoticeRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/staff': typeof StaffRoute
+  '/terms': typeof TermsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/appointment/received': typeof AppointmentReceivedRoute
+  '/doctors/$slug': typeof DoctorsSlugRoute
+  '/health-library/$slug': typeof HealthLibrarySlugRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/practices/$slug': typeof PracticesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/appointment': typeof AppointmentIndexRoute
+  '/doctors': typeof DoctorsIndexRoute
+  '/health-library': typeof HealthLibraryIndexRoute
+  '/locations': typeof LocationsIndexRoute
+  '/practices': typeof PracticesIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/practices': typeof PracticesRoute
-  '/services': typeof ServicesRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/patient-information': typeof PatientInformationRoute
+  '/popia': typeof PopiaRoute
+  '/popia-notice': typeof PopiaNoticeRoute
+  '/privacy': typeof PrivacyRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/robots.txt': typeof RobotsDottxtRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/staff': typeof StaffRoute
+  '/terms': typeof TermsRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
+  '/appointment/received': typeof AppointmentReceivedRoute
+  '/doctors/$slug': typeof DoctorsSlugRoute
+  '/health-library/$slug': typeof HealthLibrarySlugRoute
+  '/locations/$slug': typeof LocationsSlugRoute
+  '/practices/$slug': typeof PracticesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/appointment/': typeof AppointmentIndexRoute
+  '/doctors/': typeof DoctorsIndexRoute
+  '/health-library/': typeof HealthLibraryIndexRoute
+  '/locations/': typeof LocationsIndexRoute
+  '/practices/': typeof PracticesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/practices' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/book-appointment'
+    | '/contact'
+    | '/cookie-policy'
+    | '/medical-disclaimer'
+    | '/patient-information'
+    | '/popia'
+    | '/popia-notice'
+    | '/privacy'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/staff'
+    | '/terms'
+    | '/terms-and-conditions'
+    | '/appointment/received'
+    | '/doctors/$slug'
+    | '/health-library/$slug'
+    | '/locations/$slug'
+    | '/practices/$slug'
+    | '/services/$slug'
+    | '/appointment/'
+    | '/doctors/'
+    | '/health-library/'
+    | '/locations/'
+    | '/practices/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/practices' | '/services'
-  id: '__root__' | '/' | '/about' | '/practices' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/book-appointment'
+    | '/contact'
+    | '/cookie-policy'
+    | '/medical-disclaimer'
+    | '/patient-information'
+    | '/popia'
+    | '/popia-notice'
+    | '/privacy'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/staff'
+    | '/terms'
+    | '/terms-and-conditions'
+    | '/appointment/received'
+    | '/doctors/$slug'
+    | '/health-library/$slug'
+    | '/locations/$slug'
+    | '/practices/$slug'
+    | '/services/$slug'
+    | '/appointment'
+    | '/doctors'
+    | '/health-library'
+    | '/locations'
+    | '/practices'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book-appointment'
+    | '/contact'
+    | '/cookie-policy'
+    | '/medical-disclaimer'
+    | '/patient-information'
+    | '/popia'
+    | '/popia-notice'
+    | '/privacy'
+    | '/privacy-policy'
+    | '/robots.txt'
+    | '/sitemap.xml'
+    | '/staff'
+    | '/terms'
+    | '/terms-and-conditions'
+    | '/appointment/received'
+    | '/doctors/$slug'
+    | '/health-library/$slug'
+    | '/locations/$slug'
+    | '/practices/$slug'
+    | '/services/$slug'
+    | '/appointment/'
+    | '/doctors/'
+    | '/health-library/'
+    | '/locations/'
+    | '/practices/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  PracticesRoute: typeof PracticesRoute
-  ServicesRoute: typeof ServicesRoute
+  BookAppointmentRoute: typeof BookAppointmentRoute
+  ContactRoute: typeof ContactRoute
+  CookiePolicyRoute: typeof CookiePolicyRoute
+  MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
+  PatientInformationRoute: typeof PatientInformationRoute
+  PopiaRoute: typeof PopiaRoute
+  PopiaNoticeRoute: typeof PopiaNoticeRoute
+  PrivacyRoute: typeof PrivacyRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StaffRoute: typeof StaffRoute
+  TermsRoute: typeof TermsRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  AppointmentReceivedRoute: typeof AppointmentReceivedRoute
+  DoctorsSlugRoute: typeof DoctorsSlugRoute
+  HealthLibrarySlugRoute: typeof HealthLibrarySlugRoute
+  LocationsSlugRoute: typeof LocationsSlugRoute
+  PracticesSlugRoute: typeof PracticesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  AppointmentIndexRoute: typeof AppointmentIndexRoute
+  DoctorsIndexRoute: typeof DoctorsIndexRoute
+  HealthLibraryIndexRoute: typeof HealthLibraryIndexRoute
+  LocationsIndexRoute: typeof LocationsIndexRoute
+  PracticesIndexRoute: typeof PracticesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -85,18 +410,186 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/practices': {
-      id: '/practices'
-      path: '/practices'
-      fullPath: '/practices'
-      preLoaderRoute: typeof PracticesRouteImport
+    '/book-appointment': {
+      id: '/book-appointment'
+      path: '/book-appointment'
+      fullPath: '/book-appointment'
+      preLoaderRoute: typeof BookAppointmentRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services': {
-      id: '/services'
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie-policy': {
+      id: '/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/cookie-policy'
+      preLoaderRoute: typeof CookiePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medical-disclaimer': {
+      id: '/medical-disclaimer'
+      path: '/medical-disclaimer'
+      fullPath: '/medical-disclaimer'
+      preLoaderRoute: typeof MedicalDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient-information': {
+      id: '/patient-information'
+      path: '/patient-information'
+      fullPath: '/patient-information'
+      preLoaderRoute: typeof PatientInformationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/popia': {
+      id: '/popia'
+      path: '/popia'
+      fullPath: '/popia'
+      preLoaderRoute: typeof PopiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/popia-notice': {
+      id: '/popia-notice'
+      path: '/popia-notice'
+      fullPath: '/popia-notice'
+      preLoaderRoute: typeof PopiaNoticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointment/': {
+      id: '/appointment/'
+      path: '/appointment'
+      fullPath: '/appointment/'
+      preLoaderRoute: typeof AppointmentIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointment/received': {
+      id: '/appointment/received'
+      path: '/appointment/received'
+      fullPath: '/appointment/received'
+      preLoaderRoute: typeof AppointmentReceivedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors/': {
+      id: '/doctors/'
+      path: '/doctors'
+      fullPath: '/doctors/'
+      preLoaderRoute: typeof DoctorsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors/$slug': {
+      id: '/doctors/$slug'
+      path: '/doctors/$slug'
+      fullPath: '/doctors/$slug'
+      preLoaderRoute: typeof DoctorsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/health-library/': {
+      id: '/health-library/'
+      path: '/health-library'
+      fullPath: '/health-library/'
+      preLoaderRoute: typeof HealthLibraryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/health-library/$slug': {
+      id: '/health-library/$slug'
+      path: '/health-library/$slug'
+      fullPath: '/health-library/$slug'
+      preLoaderRoute: typeof HealthLibrarySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/': {
+      id: '/locations/'
+      path: '/locations'
+      fullPath: '/locations/'
+      preLoaderRoute: typeof LocationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/$slug': {
+      id: '/locations/$slug'
+      path: '/locations/$slug'
+      fullPath: '/locations/$slug'
+      preLoaderRoute: typeof LocationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practices/': {
+      id: '/practices/'
+      path: '/practices'
+      fullPath: '/practices/'
+      preLoaderRoute: typeof PracticesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/practices/$slug': {
+      id: '/practices/$slug'
+      path: '/practices/$slug'
+      fullPath: '/practices/$slug'
+      preLoaderRoute: typeof PracticesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
       path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -105,8 +598,32 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  PracticesRoute: PracticesRoute,
-  ServicesRoute: ServicesRoute,
+  BookAppointmentRoute: BookAppointmentRoute,
+  ContactRoute: ContactRoute,
+  CookiePolicyRoute: CookiePolicyRoute,
+  MedicalDisclaimerRoute: MedicalDisclaimerRoute,
+  PatientInformationRoute: PatientInformationRoute,
+  PopiaRoute: PopiaRoute,
+  PopiaNoticeRoute: PopiaNoticeRoute,
+  PrivacyRoute: PrivacyRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StaffRoute: StaffRoute,
+  TermsRoute: TermsRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
+  AppointmentReceivedRoute: AppointmentReceivedRoute,
+  DoctorsSlugRoute: DoctorsSlugRoute,
+  HealthLibrarySlugRoute: HealthLibrarySlugRoute,
+  LocationsSlugRoute: LocationsSlugRoute,
+  PracticesSlugRoute: PracticesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  AppointmentIndexRoute: AppointmentIndexRoute,
+  DoctorsIndexRoute: DoctorsIndexRoute,
+  HealthLibraryIndexRoute: HealthLibraryIndexRoute,
+  LocationsIndexRoute: LocationsIndexRoute,
+  PracticesIndexRoute: PracticesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
