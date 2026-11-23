@@ -15,6 +15,13 @@
       "when": 1795149230839,
       "tag": "0001_doctor_photo_admin_access",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795419043413,
+      "tag": "0002_secure_appointment_staff_access",
+      "breakpoints": true
     }
   ]
 }

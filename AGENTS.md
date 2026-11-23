@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep public clinic pages as file-based TanStack routes with leaf-owned metadata and shared verified practice/doctor facts in `src/lib/site.ts`, so page indexing and contact details stay consistent.
+- Keep appointment writes server-validated and staff reads protected by authenticated role checks plus database row policies, so visitor submissions remain private.

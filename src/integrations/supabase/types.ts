@@ -86,6 +86,7 @@ export type Database = {
     }
     Functions: {
       has_doctor_photo_admin: { Args: never; Returns: boolean }
+      has_practice_admin: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never

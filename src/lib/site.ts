@@ -40,6 +40,7 @@ export const services = [
 ] as const;
 
 export const practiceNumber = "1202553";
+export const siteUrl = "https://novomed-care-connector.lovable.app";
 export const telHref = (phone: string) => `tel:+27${phone.replace(/\s/g, "").slice(1)}`;
 export const mapsHref = (query: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 export const mapEmbed = (query: string) => `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
@@ -47,3 +48,24 @@ export const pageMeta = (title: string, description: string) => [
   { title }, { name: "description", content: description }, { property: "og:title", content: title },
   { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" },
 ];
+export const pageHead = (title: string, description: string, path: string) => ({
+  meta: pageMeta(title, description),
+  links: [{ rel: "canonical", href: `${siteUrl}${path === "/" ? "" : path}` }],
+});
+
+export const practiceStructuredData = (practice: (typeof practices)[number]) => ({
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: practice.name,
+  url: `${siteUrl}/practices/${practice.slug}`,
+  telephone: practice.phones.map((phone) => `+27${phone.replace(/\s/g, "").slice(1)}`),
+  email: practice.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: practice.address[0],
+    addressLocality: practice.area,
+    postalCode: practice.slug === "elsies-river" ? "7490" : "7806",
+    addressCountry: "ZA",
+  },
+  hasMap: mapsHref(practice.mapQuery),
+});
